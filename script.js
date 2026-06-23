@@ -104,10 +104,9 @@ function startExam() {
     counter   = 1;
 
     intervalId = setInterval(() => {
-        const minute = Math.floor(timer / 600);
-        const second = Math.floor((timer % 600) / 10);
+        const second = Math.floor(timer / 10);
         const tenths  = timer % 10;
-        timerText.textContent = minute + ":" + String(second).padStart(2, "0") + "." + tenths;
+        timerText.textContent = String(second).padStart(2, " ") + "." + tenths;
         timer++;
     }, 100);
 
