@@ -1,0 +1,369 @@
+:root {
+    --background: rgb(38, 38, 43);
+    --menuback: #1f1f25;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+
+p, h1, label {
+    color: lightgray;
+    font-variant-numeric: tabular-nums;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+body {
+    background-color: rgb(38, 38, 43);
+    width: 100%;
+}
+
+.loading-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(29, 41, 66);
+    height: 100vh;
+    gap: 15px;
+}
+
+.loading-screen img {
+    height: clamp(60px, 10vw, 96px);
+    width:  clamp(60px, 10vw, 96px);
+}
+
+.loading-screen p {
+    font-size: clamp(20px, 5vw, 36px);
+    font-weight: 800;
+    color: white;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 16px;          
+    height: 5vh;
+    min-height: 44px;
+    background: rgb(29, 41, 66);
+}
+
+header p {
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: 700;
+    color: white;
+}
+
+header div {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+header div img {
+    height: clamp(24px, 3vw, 30px);
+    width:  clamp(24px, 3vw, 30px);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: clamp(40px, 8vh, 100px);
+    gap: 50px;
+}
+
+.set-type-header {
+    color: lightgray;
+    font-size: clamp(22px, 4vw, 36px);
+    font-weight: 800;
+    padding-bottom: 10px;
+    align-self: center;
+    text-align: center;
+}
+
+.options-window {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: clamp(18px, 3vw, 28px);
+    padding: 0 16px;
+}
+
+.options-window .choices {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    column-gap: clamp(10px, 3vw, 20px);
+    row-gap: clamp(16px, 3vh, 28px);
+    font-size: clamp(18px, 3vw, 28px);
+}
+
+.options-window button {
+    font-size: clamp(20px, 3.5vw, 32px);
+    align-self: center;
+    text-align: center;
+    background-color: rgb(20, 115, 153);
+    border-radius: 10px;
+    border: none;
+    color: white;
+    width: clamp(120px, 30vw, 160px);
+    padding: 0.25em 0.5em;
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+
+.options-window .choices label {
+    text-align: right;
+    justify-self: start;
+}
+
+.options-window .choices input {
+    font-size: clamp(16px, 2.5vw, 24px);
+    width: clamp(70px, 15vw, 100px);
+    height: 40px;
+    background-color: lightgray;
+    border-radius: 5px;
+    text-align: center;
+    border: none;
+}
+
+.made-by {
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(12px, 2vw, 16px);
+    color: gray;
+    text-align: center;
+    line-height: 0.55cm;
+    white-space: nowrap;
+}
+
+#screenshot-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    transform: translateX(-50%);
+    font-size: clamp(12px, 2vw, 16px);
+    color: rgb(27, 193, 248);
+    font-weight: 700;
+    text-align: center;
+    text-decoration: underline;
+    line-height: 0.55cm;
+    white-space: nowrap;
+    background-color: transparent;
+    border: none;
+}
+
+.exam-screen {
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px clamp(8px, 3vw, 20px) 0;
+}
+
+.exam-window {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    gap: 0;
+}
+
+.exam-window h1 {
+    align-self: flex-start;
+    padding-left: clamp(10px, 3vw, 40px);
+    font-size: clamp(18px, 2.5vw, 26px);
+}
+
+.exam-window ul {
+    list-style: none;
+    padding: 0 clamp(10px, 2vw, 20px) 0 clamp(30px, 5vw, 60px);
+    border-bottom: solid 7px lightgray;
+    margin-top: 0;
+    color: lightgray;
+    margin-bottom: 0;
+}
+
+.exam-window ul li {
+    letter-spacing: 1.5px;
+    font-size: clamp(25px, 7vw, 40px);
+    text-align: right;
+    position: relative;
+    font-variant-numeric: tabular-nums;
+}
+
+.exam-window ul li::before {
+    content: attr(data-sign);
+    position: absolute;
+    left: -1.2em;
+}
+
+.exam-window input {
+    background-color: rgb(38, 38, 43);
+    border: none;
+    color: lightgray;
+    font-size: clamp(25px, 7vw, 40px);
+    justify-self: center;
+    text-align: right;
+    outline: none;
+    caret-color: lightgray;
+    font-variant-numeric: tabular-nums;
+}
+
+.question {
+    display: flex;
+    flex-direction: column;
+    width: min-content;
+}
+
+.left-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(4px, 1.5vw, 9px);
+}
+
+.left-text h1 {
+    font-variant: tabular-nums;
+    min-width: 5ch;
+    display: inline-block;
+    text-align: left;
+    font-size: clamp(16px, 3vw, 28px);
+    font-weight: 600;
+}
+
+.left-text #timer {
+    font-size: clamp(16px, 3vw, 28px);
+    color: white;
+    font-weight: 800;
+    text-align: left;
+}
+
+#quit {
+    align-self: flex-start;
+    font-size: clamp(20px, 3.5vw, 32px);
+    text-align: center;
+    background-color: red;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    padding: 0.25em 0.5em;
+    margin-right: clamp(4px, 1vw, 10px);
+    margin-bottom: 20px;
+    white-space: nowrap;
+}
+
+#stats-screen {
+    display: none;
+    background-color: var(--background);
+    flex-direction: column;
+    gap: 20px;
+}
+
+#stats-screen .buttons-stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: flex-end;
+    gap: clamp(6px, 1vw, 10px);
+}
+
+#stats-screen .buttons-stats p {
+    text-align: center;
+    font-size: clamp(10px, 2vw, 20px);
+}
+
+#stats-screen .buttons-stats #restart {
+    font-size: clamp(20px, 3.5vw, 32px);
+    align-self: center;
+    text-align: center;
+    background-color: rgb(20, 115, 153);
+    border-radius: 10px;
+    border: none;
+    color: white;
+    padding: 0.25em 0.5em;
+    cursor: pointer;
+}
+
+#stats-screen .buttons-stats #parameters {
+    font-size: clamp(10px, 2vw, 20px);
+    align-self: center;
+    text-align: center;
+    background-color: #424546;
+    border-radius: 7px;
+    border: none;
+    color: white;
+    padding: 0.25em 0.5em;
+    cursor: pointer;
+}
+
+.statistics {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0 clamp(16px, 5vw, 200px);  
+}
+
+.time {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, 2vw, 14px);
+    margin-top: 40px;
+}
+
+.time-text {
+    font-size: clamp(14px, 2.5vw, 20px);
+    text-align: center;
+}
+
+.detail {
+    font-size: clamp(24px, 5vw, 38px);
+    font-weight: 800;
+    text-align: center;
+    white-space: pre-line;
+}
+
+.statistics .right-side-stats {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+#stats-h {
+    font-size: clamp(12px, 3vw, 20px);
+}
+
+.statistics .right-side-stats p {
+    font-size: clamp(16px, 3vw, 22px);
+    color: lightgray;
+    max-height: 200px;
+    overflow-y: auto;
+    white-space: pre-line;
+    line-height: 1.5;
+    scrollbar-width: none;
+    font-variant-numeric: tabular-nums;
+    text-align: center;
+}
+
+.statistics #stats-p span {
+    font-size: clamp(14px, 2.5vw, 20px);
+}

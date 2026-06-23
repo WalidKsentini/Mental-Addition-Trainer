@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Addition Trainer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/abacus.svg" type="image/svg+xml">
+</head>
+<body>
+    <header id="header">
+        <div>
+            <img src="assets/abacus.svg">
+            <p>Mental Addition Trainer</p>
+        </div>
+    </header>
+    <section class="loading-screen" id="loading-screen" style="display: none;">
+        <img src="assets/vaadin_abacus.svg">
+        <p>Mental Addition<br>Trainer</p>
+    </section>
+    <main id="options-window" class="options-window">
+        <h2 class="set-type-header">OPTIONS</h2>
+        <div class="choices">
+            <label for="digits" class="digits">Number of digits: </label>
+            <input type="number" id="digits" min="1" max="10" value="2">
+            
+            <label for="rows" class="rows">Number of rows: </label>
+            <input type="number" id="rows" min="2" max="10" value="10">
+            
+            <label for="numberQuestions" class="questions">Number of questions: </label>
+            <input type="number" id="numberQuestions" min="1" value="10">
+        </div>
+        <button id="start-btn">New set</button>
+        <p class="made-by">Made by: <b>Walid Ksentini</b></p>
+    </main>
+
+    <div class="exam-screen" id="exam-screen">
+        <div class="left-text">
+            <h1 id="question-nb"></h1>
+            <p id="timer">0:00.0</p>
+        </div>
+        <div id="exam-window" class="exam-window">
+            <ul id ="questions-numbers">
+            </ul>
+            <input type="text" inputmode="numeric" pattern="[0-9]*" id="answer-input" autocomplete="off">
+        </div>
+        <button id="quit">Quit</button>
+    </div>
+
+    <section id="stats-screen" style="display: none;">
+        <div class="statistics">
+            <div class="time">
+                <div class="time-txt">
+                    <p class="time-text">Time elapsed</p>
+                    <p id="time-elapsed" class="detail">0:00.00</p>
+                </div>
+                <div class="type-txt">
+                    <p class="time-text">Questions type</p>
+                    <p id="question-type" class="detail"></p>
+                </div>
+            </div>
+            <div class="right-side-stats">
+                <p id="stats-h">Stats</p>
+                <p id="stats-p"><span></span></p>
+            </div>
+        </div>
+        <div class="buttons-stats">
+            <button id="restart">Restart</button>
+            <p>or</p>
+            <button id="parameters">Options</button>
+        </div>
+        <button id="screenshot-btn">Save Screenshot</button>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
