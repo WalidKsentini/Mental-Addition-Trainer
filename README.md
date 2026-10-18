@@ -1,4 +1,4 @@
-# Mental Addition Trainer
+# [Mental Addition Trainer](https://mental-addition-trainer.vercel.app/)
 
 A mental addition trainer website for mental calculators who want to build
 speed and stamina in multi-row addition.
