@@ -24,6 +24,8 @@ const quitButton       = document.getElementById("quit");
 const timerText        = document.getElementById("timer");
 const screenShotButton = document.getElementById("screenshot-btn")
 const questionTypeText = document.getElementById("question-type")
+const rightToLeft = document.getElementById("right-to-left")
+const leftToRight = document.getElementById("left-to-right")
 
 
 function randomNumber(min, max) {
@@ -160,7 +162,7 @@ examWindow.addEventListener("keydown", (event) => {
 });
 
 answerInput.addEventListener("keydown", (event) => {
-    if (event.key === "Backspace") {
+    if ((event.key === "Backspace") && rightToLeft.checked) {
         const start = answerInput.selectionStart;
         const end   = answerInput.selectionEnd;
         if (start === end) {
@@ -178,22 +180,27 @@ answerInput.addEventListener("blur", () => {
 
 answerInput.addEventListener("input", (event) => {
     if (event.inputType === "deleteContentBackward") return; 
-
-    const lastChar = event.data; 
-    if (lastChar && !/^\d$/.test(lastChar)) {
-        const len = event.target.value.length;
-        event.target.setSelectionRange(len, len);
-        return;
-    }
     
-    const currentPos = event.target.selectionStart;  
-    setTimeout(() => {
-        event.target.setSelectionRange(currentPos - 1, currentPos - 1); 
-    }, 0);
+    if (rightToLeft.checked) {
+        const lastChar = event.data; 
+        if (lastChar && !/^\d$/.test(lastChar)) {
+            const len = event.target.value.length;
+            event.target.setSelectionRange(len, len);
+            return;
+        }
+            
+        const currentPos = event.target.selectionStart;  
+        setTimeout(() => {
+            event.target.setSelectionRange(currentPos - 1, currentPos - 1); 
+        }, 0);
+    }
+
+    else {}
 
     if (Number(answerInput.value) === sum) {
         submitAnswer();   
     }
+
 });
 
 restartButton.addEventListener("click", () => {

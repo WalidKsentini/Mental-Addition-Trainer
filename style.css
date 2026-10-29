@@ -55,7 +55,7 @@ header {
     gap: 16px;          
     height: 5vh;
     min-height: 44px;
-    background: rgb(29, 41, 66);
+    background: #1d2942;
 }
 
 header p {
@@ -74,7 +74,7 @@ header div {
 
 header div img {
     height: clamp(24px, 3vw, 30px);
-    width:  clamp(24px, 3vw, 30px);
+    width: clamp(24px, 3vw, 30px);
 }
 
 main {
@@ -126,13 +126,21 @@ main {
     margin-top: 35px;
     margin-bottom: 20px;
 }
+.options-window button:hover {
+    background-color: hsl(197, 77%, 29%);
+    transform: translateY(-2px);
+}
+.options-window button:active {
+    background-color: hsl(197, 77%, 24%);
+    transform: translateY(2px);
+}
 
-.options-window .choices label {
+.options-window .choices .label-txt {
     text-align: right;
     justify-self: start;
 }
 
-.options-window .choices input {
+.options-window .choices .txt-input {
     font-size: clamp(16px, 2.5vw, 24px);
     width: clamp(70px, 15vw, 100px);
     height: 40px;
@@ -140,6 +148,38 @@ main {
     border-radius: 5px;
     text-align: center;
     border: none;
+}
+
+.typing-dir {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    width: clamp(70px, 15vw, 100px);
+    justify-content: space-between;
+}
+
+.label-check {
+    border: 0.6mm solid hsl(0, 0%, 50%);
+    color: hsl(0, 0%, 50%);
+    padding: 0.4rem 0.5rem;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;    
+    -ms-user-select: none;     
+    user-select: none;  
+}
+
+.check-input {
+    display: none;
+}
+
+.check-input:checked + .label-check {
+    border: 0.6mm solid hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 100%);
 }
 
 .made-by {
